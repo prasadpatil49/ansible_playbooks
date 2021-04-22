@@ -1,4 +1,0 @@
----
-- name: install and configure apache on centos
-  hosts: all
-  
