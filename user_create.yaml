@@ -14,7 +14,7 @@
 
     - name: creating user
       user:
-        name: {{ uname }}
+        name: "{{ uname }}"
         comment: user created by ansible
         expires: -1
         password: "{{ output.stdout }}"
