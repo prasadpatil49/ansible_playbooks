@@ -22,7 +22,7 @@
 
     - name: check connection
       uri: 
-        url: http://{{ ansible_host }}
+        url: http://192.168.56.4
       delegate_to: localhost
       register: result
 
