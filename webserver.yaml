@@ -27,4 +27,4 @@
 
     - name: print result
       debug:
-        msg: {{ result }}
+        msg: Exit Code {{ result.status }}
