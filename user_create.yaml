@@ -10,4 +10,4 @@
 
     - name: print hash
       debug:
-        msg: {{ output.stdout }}
+        msg: "{{ output.stdout }}"
