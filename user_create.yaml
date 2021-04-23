@@ -11,3 +11,10 @@
     - name: print hash
       debug:
         msg: "{{ output.stdout }}"
+
+    - name: creating user
+      user:
+        name: prasad
+        comment: user created by ansible
+        expires: -1
+        password: {{ output.stdout }}
