@@ -19,3 +19,6 @@
         name: httpd
         state: restarted
         enabled: yes
+
+    - name: check connection
+      uri: http://{{ ansible_host }}
