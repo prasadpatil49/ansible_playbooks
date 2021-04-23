@@ -17,4 +17,4 @@
         name: prasad
         comment: user created by ansible
         expires: -1
-        password: {{ output.stdout }}
+        password: "{{ output.stdout }}"
