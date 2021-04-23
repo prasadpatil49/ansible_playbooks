@@ -1,0 +1,13 @@
+---
+- name: create user on centos
+  hosts: all
+  become: true
+  tasks:
+    - name: calculating encrypted password
+      shell: 
+        cmd: openssl passwd -6 -salt ansible {{ password }}
+      register: output
+
+    - name: print hash
+      debug:
+        msg: {{ output.stdout }}
