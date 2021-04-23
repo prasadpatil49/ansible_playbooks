@@ -1,0 +1,14 @@
+---
+- name: Install and check python version
+  hosts: all
+  become: true
+  tasks:
+    - yum:
+        name: python3
+        state: latest
+    - shell:
+        cmd: python3 --version
+      Register: output
+
+    - debug:
+        msg: "{{ output.stdout }}"
