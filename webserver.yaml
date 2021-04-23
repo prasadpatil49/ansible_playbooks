@@ -1,4 +1,21 @@
 ---
 - name: install and configure apache on centos
   hosts: all
-  
+  become: true
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: latest
+
+    - name: create html file
+      lineinfile:
+        dest: /var/www/html/index.html
+        line: "Hello From {{ ansible_hostname }}"
+        create: yes
+
+    - name: restart http service
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes
