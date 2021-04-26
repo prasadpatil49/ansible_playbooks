@@ -10,13 +10,9 @@
         dest: /etc/yum.repos.d/docer-ce.repo
 
     - yum:
-        name: "{{ item }}"
+        name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
         enablerepo: docker-ce-nightly
         state: latest
-      with_items:
-        - docker-ce
-        - docker-ce-cli
-        - containerd.io
 
     - service:
         name: docker
