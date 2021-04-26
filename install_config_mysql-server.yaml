@@ -15,6 +15,11 @@
         state: started
         enabled: yes
 
+    - name: Install python3-PyMySQL library
+      dnf:
+        name: python3-PyMySQL
+        state: present
+
     - name: Set MySQL root Password
       mysql_user:
         login_host: 'localhost'
