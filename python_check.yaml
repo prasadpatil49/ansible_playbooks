@@ -1,19 +1,16 @@
 ---
-- name: Install and check python version
+- name: install and check python
   hosts: all
-  become: true
   tasks:
-    - name: install
+    - name: install python
       yum:
         name: python3
         state: latest
-
     - name: check
       shell:
         cmd: python3 --version
-      Register: output
+      register: output
 
-    - name: display
+    - name: print
       debug:
         msg: "{{ output.stdout }}"
-        
