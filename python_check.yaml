@@ -3,13 +3,16 @@
   hosts: all
   become: true
   tasks:
-    - yum:
+    - name: install
+      yum:
         name: python3
         state: latest
-        
-    - shell:
+
+    - name: check
+      shell:
         cmd: python3 --version
       Register: output
 
-    - debug:
+    - name: display
+      debug:
         msg: "{{ output.stdout }}"
