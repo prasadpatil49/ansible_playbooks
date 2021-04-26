@@ -7,6 +7,8 @@
       git:
         repo: 'git@github.com:prasadpatil49/pipeline_test.git'
         dest: /root/playbooks
+        accept_hostkey: yes
+        key_file: /tmp/id_rsa
         clone: yes
       delegate_to: localhost
 
