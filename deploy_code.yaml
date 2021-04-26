@@ -1,0 +1,23 @@
+---
+- name: deploy code from git to webserver
+  hosts: all
+  become: true
+  tasks:
+    - name: clone to localhost
+      git:
+        repo: 'git@github.com:prasadpatil49/pipeline_test.git'
+        dest: /root/playbooks
+        clone: yes
+      delegate_to: localhost
+
+    - name: sync from remote host to destination
+      synchronize:
+        src: /root/playbooks/pipeline_test/
+        dest: /var/www/html/
+      delegate_to: localhost
+
+    - name: restart http service
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes
