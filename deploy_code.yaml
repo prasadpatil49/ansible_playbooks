@@ -6,7 +6,7 @@
     - name: clone to localhost
       git:
         repo: 'git@github.com:prasadpatil49/pipeline_test.git'
-        dest: /root/pipeline_test
+        dest: /root/test
         accept_hostkey: yes
         key_file: /root/.ssh/id_rsa
         clone: yes
