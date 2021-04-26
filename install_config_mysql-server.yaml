@@ -34,7 +34,7 @@
       mysql_info:
         login_user: root
         login_password: '123456'
-        filter: version
+        filter: "!settings,!users"
       register: outout
 
     - name: print output
