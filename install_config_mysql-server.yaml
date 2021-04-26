@@ -35,3 +35,8 @@
         login_user: root
         login_password: '123456'
         filter: version
+      register: outout
+
+    - name: print output
+      debug:
+        var: output
