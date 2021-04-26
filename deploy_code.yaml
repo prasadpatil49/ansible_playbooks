@@ -17,6 +17,7 @@
         src: /root/playbooks/pipeline_test/
         dest: /var/www/html/
       delegate_to: localhost
+      become_user: root
 
     - name: restart http service
       service:
