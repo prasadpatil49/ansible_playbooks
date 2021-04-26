@@ -16,7 +16,7 @@
 
     - name: sync from remote host to destination
       synchronize:
-        src: /root/test/pipeline_test/
+        src: /root/test/
         dest: /var/www/html/
       delegate_to: localhost
       become_user: root
