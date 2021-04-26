@@ -8,4 +8,5 @@
         repo: 'git@github.com:prasadpatil49/pipeline_test.git'
         dest: /root/playbooks
         accept_hostkey: yes
+        key_file: /root/.ssh/id_rsa
         clone: yes
