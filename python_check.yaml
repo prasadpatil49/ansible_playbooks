@@ -16,3 +16,4 @@
     - name: display
       debug:
         msg: "{{ output.stdout }}"
+        
