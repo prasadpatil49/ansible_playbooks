@@ -9,6 +9,7 @@
         dest: /root/pipeline_test
         accept_hostkey: yes
         key_file: /root/.ssh/id_rsa
+        clone: yes
       delegate_to: localhost
       become_user: root
       ignore_errors: yes
