@@ -28,3 +28,10 @@
         name: 'root'
         password: '123456'
         state: present
+      ignore_errors: yes
+
+    - name: Get MySQL version with non-default credentials
+      mysql_info:
+        login_user: root
+        login_password: '123456'
+        filter: version
