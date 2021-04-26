@@ -4,11 +4,10 @@
   become: true
   tasks:
 
-    - name: Add repository
-      yum_repository:
-        name: docker
-        description: docker repository
-        baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+    - name: Add Docker repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docer-ce.repo
 
     - yum:
         name: "{{ item }}"
