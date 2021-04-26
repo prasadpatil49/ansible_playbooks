@@ -6,15 +6,16 @@
     - name: clone to localhost
       git:
         repo: 'git@github.com:prasadpatil49/pipeline_test.git'
-        dest: /root/playbooks
+        dest: /root/pipeline_test
         accept_hostkey: yes
+        key_file: /root/.ssh/id_rsa
       delegate_to: localhost
       become_user: root
       ignore_errors: yes
 
     - name: sync from remote host to destination
       synchronize:
-        src: /root/playbooks/pipeline_test/
+        src: /root/test/pipeline_test/
         dest: /var/www/html/
       delegate_to: localhost
       become_user: root
