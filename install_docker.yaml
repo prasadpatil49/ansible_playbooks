@@ -17,3 +17,6 @@
     - service:
         name: docker
         state: started
+
+    - pip
+        name: ['docker', 'docker-compose']
