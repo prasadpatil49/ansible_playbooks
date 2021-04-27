@@ -52,6 +52,6 @@
     - debug:
         var: result.containers
 
-    - shell
+    - shell:
         cmd: docker exec -it "{{ item.Id }}" hostname
       with_items: result.containers
