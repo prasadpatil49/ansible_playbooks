@@ -43,3 +43,13 @@
           - "8080:80"
         tty: true
         detach: true
+
+    - name: Container present
+      docker_container:
+        name: web
+        state: present
+        command: hostname
+      register: output
+
+    - debug:
+        var: output
