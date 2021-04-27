@@ -43,3 +43,11 @@
           - "8080:80"
         tty: yes
         detach: yes
+
+    - name: Get container info
+      docker_host_info:
+        containers: yes
+      register: result
+
+    - debug:
+        var: result
