@@ -51,7 +51,3 @@
 
     - debug:
         var: result.containers[0].Id
-
-    - debug:
-        var: "{{ item.Id }}"
-      with_items: "{{ result.containers }}"
