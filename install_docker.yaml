@@ -17,6 +17,7 @@
     - service:
         name: docker
         state: started
+        enabled: yes
 
     - pip:
         extra_args: '--trusted-host pypi.org --trusted-host files.pythonhosted.org'
@@ -24,5 +25,21 @@
           - docker
           - docker-compose
 
-    - docker_image:
-        name: hello-world
+    - name: download image
+      docker_image:
+        name: centos
+
+    - name: build image
+      docker_image:
+        path: /root
+        name: web_image
+
+    - name: launch container
+      docker_container:
+        name: web
+        image: web_image
+        state: started
+        ports:
+          - "8080:80"
+        tty: true
+        detach: true
