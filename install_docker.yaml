@@ -50,4 +50,8 @@
       register: result
 
     - debug:
-        var: result
+        var: result.containers
+
+    - shell
+        cmd: docker exec -it "{{ item.Id }}" hostname
+      with_items: result.containers
