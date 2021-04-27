@@ -41,5 +41,5 @@
         state: started
         ports:
           - "8080:80"
-        tty: true
-        detach: true
+        tty: yes
+        detach: yes
