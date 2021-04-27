@@ -48,6 +48,7 @@
       docker_container:
         name: web
         state: present
+        image: web_image
         command: hostname
       register: output
 
