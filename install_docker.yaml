@@ -43,14 +43,4 @@
           - "8080:80"
         tty: true
         detach: true
-
-    - name: Container present
-      docker_container:
-        name: web
-        state: present
-        image: web_image
         command: touch /root/abc.txt
-      register: output
-
-    - debug:
-        var: output
