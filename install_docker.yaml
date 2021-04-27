@@ -43,4 +43,3 @@
           - "8080:80"
         tty: true
         detach: true
-        command: touch /root/abc.txt
