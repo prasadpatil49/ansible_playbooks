@@ -36,11 +36,11 @@
 
     - name: launch container
       docker_container:
-        name: web
+        name: web2
         image: web_image
         state: started
         ports:
-          - "8080:80"
+          - "80:80"
         tty: yes
         detach: yes
 
@@ -53,5 +53,5 @@
         var: result.containers[0].Id
 
     - debug:
-        var: item
+        var: {{ item }}
       with_items: result.containers
