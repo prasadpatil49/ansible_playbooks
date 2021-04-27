@@ -54,4 +54,4 @@
 
     - debug:
         var: {{ item }}
-      with_items: result.containers
+      with_items: {{ result.containers }}
