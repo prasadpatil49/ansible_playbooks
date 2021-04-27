@@ -49,7 +49,7 @@
         name: web
         state: present
         image: web_image
-        command: hostname
+        command: touch /root/abc.txt
       register: output
 
     - debug:
