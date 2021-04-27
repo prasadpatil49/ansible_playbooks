@@ -19,6 +19,7 @@
         state: started
 
     - pip:
+        extra_args: '--trusted-host pypi.org --trusted-host files.pythonhosted.org'
         name:
           - docker
           - docker-compose
