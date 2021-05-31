@@ -2,10 +2,7 @@
 - name: install and check python
   hosts: all
   tasks:
-    - name: install python
-      yum:
-        name: python3
-        state: latest
+
     - name: check
       shell:
         cmd: python3 --version
