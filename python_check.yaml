@@ -11,3 +11,9 @@
     - name: print
       debug:
         msg: "{{ output.stdout }}"
+
+    - name: create html file
+      lineinfile:
+        dest: /tmp/index.html
+        line: "Hello From {{ ansible_hostname }}"
+        create: yes
