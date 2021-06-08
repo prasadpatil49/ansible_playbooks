@@ -1,13 +1,16 @@
 ---
 - name: Test ARCON API
-  host: all
+  hosts: localhost
   tasks:
-  
     - name: call API
       uri:
-        url: https://your.form.based.auth.example.com/dashboard.php
-        method: GET
-        return_content: yes
+        url: http://192.168.56.4:5051/api/GetTargetDevicePassKey
+        method: POST
+        return_content: true
         headers:
-          Cookie: "{{ login.cookies_string }}"
+          Authorization: 'bearer fgfdgfgfdgfdg'
+      register: output_data
 
+    - name: print output
+      debug:
+        var: output_data.json.Result[3].Password
