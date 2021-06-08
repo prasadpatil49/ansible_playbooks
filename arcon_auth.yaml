@@ -32,4 +32,4 @@
 
     - name: print output
       debug:
-        var: shell_output
+        var: shell_output.stdout_lines
