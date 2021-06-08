@@ -19,6 +19,9 @@
       debug:
         var: output_data.json.Result[3].UserName
 
+    - name: set authentication fact
+      set_fact: ansible_user="{{output_data.json.Result[3].UserName}}" ansible_password="{{output_data.json.Result[3].Password}}"
+
 - name: run command
   hosts: all
   tasks:
