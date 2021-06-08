@@ -1,6 +1,6 @@
 ---
 - name: Test ARCON API
-  hosts: localhost
+  hosts: all
   tasks:
     - name: call API
       uri:
@@ -10,7 +10,8 @@
         headers:
           Authorization: 'bearer fgfdgfgfdgfdg'
       register: output_data
-
+      delegate_to: localhost
+      
     - name: print output
       debug:
         var: output_data.json.Result[3].Password
@@ -22,8 +23,5 @@
     - name: set authentication fact
       set_fact: ansible_user="{{output_data.json.Result[3].UserName}}" ansible_password="{{output_data.json.Result[3].Password}}"
 
-- name: run command
-  hosts: all
-  tasks:
     - name: shell command
       shell: hostname;date
