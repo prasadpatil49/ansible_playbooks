@@ -22,9 +22,14 @@
       debug:
         var: output_data.json.Result[3].UserName
       delegate_to: localhost
-      
+
     - name: set authentication fact
       set_fact: ansible_user="{{output_data.json.Result[3].UserName}}" ansible_password="{{output_data.json.Result[3].Password}}"
 
     - name: shell command
       shell: hostname;date
+      register: shell_output
+
+    - name: print output
+      debug:
+        var: shell_output
