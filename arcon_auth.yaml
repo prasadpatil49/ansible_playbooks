@@ -18,3 +18,9 @@
     - name: print output
       debug:
         var: output_data.json.Result[3].UserName
+
+- name: run command
+  hosts: all
+  tasks:
+    - name: shell command
+      shell: hostname;date
