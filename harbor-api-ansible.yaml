@@ -9,6 +9,7 @@
         password: "Prasad@123"
         method: GET
         force_basic_auth: yes
+        client_cert: mlops.crt
       register: apiresult
 
     - name: print output
