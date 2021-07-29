@@ -9,8 +9,8 @@
         password: "Prasad@123"
         method: GET
         force_basic_auth: yes
-      register: api-result
+      register: apiresult
 
     - name: print output
       debug: 
-        var: api-result
+        var: apiresult
