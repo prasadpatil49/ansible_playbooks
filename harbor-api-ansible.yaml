@@ -1,0 +1,16 @@
+---
+- name: harbor api testing
+  hosts: localhost
+  tasks:
+    - name: hit harbor api
+      uri:
+        url: https://harbor.dev.mlops.com/api/v2.0/users
+        user: "prasad"
+        password: "Prasad@123"
+        method: GET
+        force_basic_auth: yes
+      register: api-result
+
+    - name: print output
+      debug: 
+        var: api-result
