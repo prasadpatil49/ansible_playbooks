@@ -8,8 +8,19 @@
         url: https://harbor.dev.mlops.com/api/v2.0/users
         user: "prasad"
         password: "Prasad@123"
-        method: GET
+        method: POST
         force_basic_auth: yes
+        headers:
+          Content-Type: application/json
+        body_format: json
+        body:
+          comment: "create using api"
+          username: "prasadpatil"
+          password: "Prasad@123"
+          email: "abc@gmail.com"
+          realname: "prasad"
+          
+          
       register: apiresult
 
     - name: print output
