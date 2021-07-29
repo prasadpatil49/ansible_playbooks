@@ -11,7 +11,7 @@
         method: GET
         force_basic_auth: yes
         client_cert: mlops.pem
-
+        client_key: mlops.key
       register: apiresult
 
     - name: print output
