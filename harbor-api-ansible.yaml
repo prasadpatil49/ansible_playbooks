@@ -10,6 +10,7 @@
         password: "Prasad@123"
         method: POST
         force_basic_auth: yes
+        status: 201
         headers:
           Content-Type: application/json
         body_format: json
@@ -19,6 +20,7 @@
           password: "Prasad@123"
           email: "abc@gmail.com"
           realname: "prasad"
+        
           
           
       register: apiresult
