@@ -10,7 +10,6 @@
         password: "Prasad@123"
         method: GET
         force_basic_auth: yes
-        validate_certs: no
 
       register: apiresult
 
