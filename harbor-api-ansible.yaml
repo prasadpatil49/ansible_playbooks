@@ -1,6 +1,7 @@
 ---
 - name: harbor api testing
   hosts: localhost
+  gather_facts: no
   tasks:
     - name: hit harbor api
       uri:
