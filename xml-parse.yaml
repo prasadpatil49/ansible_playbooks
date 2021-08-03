@@ -14,7 +14,7 @@
     - name: parse xml
       xml:
         xmlstring: "{{ output_data.content }}"
-        xpath: /note/to
+        xpath: /note
         content: attribute
       register: xml_output
 
