@@ -13,7 +13,7 @@
 
     - name: parse xml
       xml:
-        xmlstring: "{{ output_date.content }}"
+        xmlstring: "{{ output_data.content }}"
         xpath: /note/to
       register: xml_output
 
