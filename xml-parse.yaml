@@ -26,4 +26,4 @@
 
     - name: xml parse output
       debug:
-        var: xml_output
+        var: xml_output.matches[0].to
