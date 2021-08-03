@@ -1,0 +1,14 @@
+---
+- name: Test ARCON API
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: fetch xml data
+      uri:
+        url: http://192.168.56.4:5051/api/GetTargetDevicePassKey
+      register: output_data
+      delegate_to: localhost
+
+    - name: print output
+      debug:
+        var: output_data
