@@ -11,6 +11,17 @@
       register: output_data
       delegate_to: localhost
 
-    - name: print output
+    - name: parse xml
+      xml:
+        xmlstring: "{{ output_date.content }}"
+        xpath: /note/to
+      register: xml_output
+
+
+    - name: uri output
       debug:
         var: output_data
+
+    - name: xml parse output
+      debug:
+        var: xml_output
