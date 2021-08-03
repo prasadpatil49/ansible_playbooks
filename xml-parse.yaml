@@ -16,6 +16,7 @@
         xmlstring: "{{ output_data.content }}"
         xpath: /note
         content: attribute
+        attribute: to
       register: xml_output
 
 
