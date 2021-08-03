@@ -5,7 +5,7 @@
   tasks:
     - name: fetch xml data
       uri:
-        url: http://192.168.56.4:5051/api/GetTargetDevicePassKey
+        url: http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/xml/note.xml
       register: output_data
       delegate_to: localhost
 
