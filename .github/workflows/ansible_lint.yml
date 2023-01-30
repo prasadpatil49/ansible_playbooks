@@ -33,6 +33,6 @@ jobs:
       with:
         # Specific path to lint instead of the default `.`. Multiple arguments are not supported and you will need to alter linter configuration to accommodate other use cases.
 
-        path: "." # optional, default is --show-relpath
+        path: "user_creation/" # optional, default is --show-relpath
       # #   # deprecated
       # #   args: # optional, default is 
