@@ -1,10 +1,10 @@
 ---
 - name: Test ARCON API
   hosts: all
-  gather_facts: no
+  gather_facts: false
   tasks:
-    - name: call API
-      uri:
+    - name: Call API
+      ansible.builtin.uri:
         url: http://192.168.56.4:5051/api/GetTargetDevicePassKey
         method: POST
         return_content: true
@@ -13,23 +13,26 @@
       register: output_data
       delegate_to: localhost
 
-    - name: print output
-      debug:
+    - name: Print output
+      ansible.builtin.debug:
         var: output_data.json.Result[3].Password
       delegate_to: localhost
 
-    - name: print output
-      debug:
+    - name: Print output
+      ansible.builtin.debug:
         var: output_data.json.Result[3].UserName
       delegate_to: localhost
 
-    - name: set authentication fact
-      set_fact: ansible_user="{{output_data.json.Result[3].UserName}}" ansible_password="{{output_data.json.Result[3].Password}}"
+    - name: Set authentication fact
+      ansible.builtin.set_fact:
+        ansible_user: "{{ output_data.json.Result[3].UserName }}"
+        ansible_password: "{{ output_data.json.Result[3].Password }}"
 
-    - name: shell command
-      shell: hostname;date
+    - name: Shell command
+      ansible.builtin.command: hostname;date
+      changed_when: false
       register: shell_output
 
-    - name: print output
-      debug:
+    - name: Print output
+      ansible.builtin.debug:
         var: shell_output.stdout_lines

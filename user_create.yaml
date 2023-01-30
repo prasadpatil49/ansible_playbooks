@@ -4,8 +4,8 @@
   become: true
   tasks:
     - name: Create hash value
-      ansible.builtin.shell:
-        cmd: openssl passwd -6 -salt ansible {{ password }}
+      ansible.builtin.command: openssl passwd -6 -salt ansible {{ password }}
+      changed_when: false
       register: output
 
     - name: Print hash
