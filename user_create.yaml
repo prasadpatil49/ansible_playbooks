@@ -1,19 +1,19 @@
 ---
-- name: linux user creation
+- name: Linux user creation
   hosts: all
   become: true
   tasks:
-    - name: create hash value
-      shell:
+    - name: Create hash value
+      ansible.builtin.shell:
         cmd: openssl passwd -6 -salt ansible {{ password }}
       register: output
 
-    - name: print hash
-      debug:
+    - name: Print hash
+      ansible.builtin.debug:
         msg: "{{ output.stdout }}"
 
-    - name: creating user
-      user:
+    - name: Creating user
+      ansible.builtin.user:
         name: "{{ uname }}"
         comment: user created by ansible
         expires: -1
