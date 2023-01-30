@@ -16,23 +16,19 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  lint:
+  build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
 
+      - name: Run ansible-lint
+        # replace `main` with any valid ref, or tags like `v6`
+        uses: ansible/ansible-lint-action@main
+        # optional:
+        # with:
+        #   path: "playbooks/"  # <-- only one value is allowed
 
-
-    - name: Ansible Lint
-      # You may pin to the exact commit or the version.
-      # uses: ansible/ansible-lint-action@00bab8f19cddd45b04ba28dc38e5d9a2a1b1366c
-      uses: ansible/ansible-lint-action@main
-      with:
-        # Specific path to lint instead of the default `.`. Multiple arguments are not supported and you will need to alter linter configuration to accommodate other use cases.
-
-        path: "ansible_playbooks/install_packages/install_docker.yaml" # optional, default is --show-relpath
-      # #   # deprecated
-      # #   args: # optional, default is 
